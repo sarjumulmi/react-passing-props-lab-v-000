@@ -29,10 +29,10 @@ import FilteredFruitList from './FilteredFruitList.js';
 //   }
 // }
 
-const FruitBasket = ({fruit, filters, currentFilter, onUpdateFilterCallback})=>{
+const FruitBasket = ({fruit, filters, currentFilter, updateFilterCallback})=>{
   return (
     <div className="fruit-basket">
-      <Filter filters={filters} handleChange={onUpdateFilter} />
+      <Filter filters={filters} handleChange={updateFilterCallback} />
       <FilteredFruitList
         filter={currentFilter} fruit={fruit} />
     </div>
@@ -43,7 +43,7 @@ FruitBasket.defaultProps = {
   fruit:[],
   filters:[],
   currentFilter: null,
-  onUpdateFilterCallback: function() {}
+  updateFilterCallback: function() {}
 }
 
 export default FruitBasket;
